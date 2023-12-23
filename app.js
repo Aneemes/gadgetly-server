@@ -31,6 +31,9 @@ mongoose.connect(process.env.DATABASE)
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(cors());
+app.use(cors({
+  origin: 'https://gadgetly-client.vercel.app'
+}));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
